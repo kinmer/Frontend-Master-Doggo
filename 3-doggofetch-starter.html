@@ -99,7 +99,10 @@
        const choices = [];
        choices.push(correctAnswer);
         while (choices.length < n) {
-            choices.push(getRandomElement(array));
+            let candidate = getRandomElement(array);
+            if(! choices.includes(candidate)) {
+                choices.push(candidate);
+            }
         }
 
        return shuffleArray(choices);
